@@ -10,133 +10,214 @@
 # 		dice = percentage adjustment to damage output
 #		sides = rlev-dependent power
 #		m_bonus: 1 means power is proportional to rlev, 2 means inverse
-
+# vis-message: Message that is printed when the spell is cast by a visible monster (use %^s for the monster's name), e.g. %^s points at you, incanting terribly!
+# invis-message: Message that is printed when the spell is cast by an unseen monster, e.g. Something utters a terrible incantation!
+# lore: Description that is printed in monster recall after "It can", e.g. cause critical wounds
+#  A message which is printed when the player saves (i.e. anything more flavourful than "You avoid the effects!"), if the spell allows a save.
 
 name:SHRIEK
 hit:100
 effect:AGGRAVATE
 power:d150M1
+vis-message:%^ makes a high-pitched shriek
+invis-message:shrieks
+lore:shriek for help
 
 name:ARROW_1
 hit:40
 effect:BOLT:ARROW
 dice:1d6
+vis-message:%^ fires an arrow
+invis-message:fires an arrow
+lore:fire an arrow
 
 name:ARROW_2
 hit:40
 effect:BOLT:ARROW
 dice:3d6
+vis-message:%^ fires an arrow
+invis-message:fires an arrow
+lore:fire arrows
 
 name:ARROW_3
 hit:50
 effect:BOLT:ARROW
 dice:5d6
+vis-message:%^ fires a missile
+invis-message:fires a missile
+lore:fire a missile
 
 name:ARROW_4
 hit:50
 effect:BOLT:ARROW
 dice:7d6
+vis-message:%^ fires a missile
+invis-message:fires a missile
+lore:fires missiles
 
 name:BR_ACID
 hit:100
 effect:BREATH:ACID:2
 power:20
+vis-message:%^ breathes acid
+invis-message:hisses
+lore:acid
 
 name:BR_ELEC
 hit:100
 effect:BREATH:ELEC:2
 power:10
+vis-message:%^ breathes lightning
+invis-message:crackles
+lore:lightning
 
 name:BR_FIRE
 hit:100
 effect:BREATH:FIRE:2
 power:10
+vis-message:%^ breathes fire
+invis-message:roars
+lore:fire
+
 
 name:BR_COLD
 hit:100
 effect:BREATH:COLD:2
 power:10
+vis-message:%^ breathes frost
+invis-message:wooshes
+lore:frost
 
 name:BR_POIS
 hit:100
 effect:BREATH:POIS:2
 power:125d100M1
+vis-message:%^ breathes poison
+invis-message:retches
+lore:poison
 
 name:BR_NETH
 hit:100
 effect:BREATH:NETHER:2
 power:d2000M2
+vis-message:%^ breathes nether
+invis-message:groans
+lore:nether
+
 
 name:BR_LIGHT
 hit:100
 effect:BREATH:LIGHT:2
 power:10
+vis-message:%^ breathes light
+invis-message:breathes
+lore:light
 
 name:BR_DARK
 hit:100
 effect:BREATH:DARK:2
 power:10
+vis-message:%^ breathes darkness
+invis-message:breathes
+lore:darkness
+
 
 name:BR_SOUN
 hit:100
 effect:BREATH:SOUND:2
 power:20
+vis-message:%^ breathes sound
+invis-message:breathes
+lore:sound
 
 name:BR_CHAO
 hit:100
 effect:BREATH:CHAOS:2
 power:d2000M2
+vis-message:%^ breathes chaos
+invis-message:breathes
+lore:chaos
 
 name:BR_DISE
 hit:100
 effect:BREATH:DISEN:2
 power:50
+vis-message:%^ breathes disenchantment
+invis-message:breathes
+lore:disenchantment
 
 name:BR_NEXU
 hit:100
 effect:BREATH:NEXUS:2
 power:20
+vis-message:%^ breathes nexus
+invis-message:breathes
+lore:nexus
 
 name:BR_TIME
 hit:100
 effect:BREATH:TIME:2
 power:d2000M2
+vis-message:%^ breathes time
+invis-message:breathes
+lore:time
 
 name:BR_INER
 hit:100
 effect:BREATH:INERTIA:2
 power:30
+vis-message:%^ breathes inertia
+invis-message:breathes
+lore:inertia
 
 name:BR_GRAV
 hit:100
 effect:BREATH:GRAVITY:2
 power:30
+vis-message:%^ breathes gravity
+invis-message:breathes
+lore:gravity
 
 name:BR_SHAR
 hit:100
 effect:BREATH:SHARD:2
 power:5+125d1
+vis-message:%^ breathes shards
+invis-message:breathes
+lore:shards
 
 name:BR_PLAS
 hit:100
 effect:BREATH:PLASMA:2
 power:30
+vis-message:%^ breathes plasma
+invis-message:breathes
+lore:plasma
 
 name:BR_WALL
 hit:100
 effect:BREATH:FORCE:2
 power:30
+vis-message:%^ breathes force
+invis-message:breathes
+lore:force
 
 name:BR_MANA
 hit:100
 effect:BREATH:MANA:2
 power:100
+vis-message:%^ breathes raw magic
+invis-message:breathes
+lore:mana
 
 name:BOULDER
 hit:60
 effect:BOLT:ARROW
 dice:$Dd12
 expr:D:MONSTER_LEVEL:/ 7 + 1
+vis-message:%^ hurls a boulder
+invis-message:hurls a boulder
+lore:throw boulders
 
 name:BA_ACID
 hit:100
@@ -144,6 +225,10 @@ effect:BALL:ACID:2
 dice:15+1d$S
 expr:S:MONSTER_LEVEL:* 3
 power:20
+vis-message:%^ casts a ball of acid
+invis-message:mumbles
+lore:produce acid balls
+
 
 name:BA_ELEC
 hit:100
@@ -151,6 +236,9 @@ effect:BALL:ELEC:2
 dice:8+1d$S
 expr:S:MONSTER_LEVEL:* 3 / 2
 power:10
+vis-message:%^ casts a ball of lightning
+invis-message:mumbles
+lore:produce lightning balls
 
 name:BA_FIRE
 hit:100
@@ -158,6 +246,9 @@ effect:BALL:FIRE:2
 dice:10+1d$S
 expr:S:MONSTER_LEVEL:* 7 / 2
 power:10
+vis-message:%^ casts a ball of fire
+invis-message:mumbles
+lore:produce fire balls
 
 name:BA_COLD
 hit:100
@@ -165,12 +256,18 @@ effect:BALL:COLD:2
 dice:10+1d$S
 expr:S:MONSTER_LEVEL:* 3 / 2
 power:10
+vis-message:%^ casts a ball of frost
+invis-message:mumbles
+lore:produce frost balls
 
 name:BA_POIS
 hit:100
 effect:BALL:POIS:2
 dice:12d2
 power:125d100M1
+vis-message:%^ casts a ball of poison
+invis-message:mumbles
+lore:produce poison balls
 
 name:BA_NETH
 hit:100
@@ -178,6 +275,9 @@ effect:BALL:NETHER:2
 dice:$B+10d10
 expr:B:MONSTER_LEVEL:+ 50
 power:d2000M2
+vis-message:%^ casts a ball of nether
+invis-message:mumbles
+lore:produce nether balls
 
 name:BA_WATE
 hit:100
@@ -185,6 +285,9 @@ effect:BALL:WATER:2
 dice:50+1d$S
 expr:S:MONSTER_LEVEL:* 5 / 2
 power:20
+vis-message:%^ casts a ball of water
+invis-message:mumbles
+lore:produce water balls
 
 name:BA_MANA
 hit:100
@@ -192,6 +295,9 @@ effect:BALL:MANA:2
 dice:$B+10d10
 expr:B:MONSTER_LEVEL:* 5
 power:100
+vis-message:%^ invokes a storm of raw magic
+invis-message:screams loudly
+lore:invoke mana storms
 
 name:BA_DARK
 hit:100
@@ -199,6 +305,9 @@ effect:BALL:DARK:2
 dice:$B+10d10
 expr:B:MONSTER_LEVEL:* 5
 power:10
+vis-message:%^ invokes a storm of darkness
+invis-message:mumbles loudly
+lore:invoke darkness storms
 
 name:DRAIN_MANA
 hit:100
@@ -206,6 +315,9 @@ effect:DRAIN_MANA
 dice:d$S
 expr:S:MONSTER_LEVEL:/ 2 + 1
 power:5
+vis-message:%^ drains your mana away
+invis-message:moans
+lore:drain mana
 
 name:MIND_BLAST
 hit:100
@@ -213,6 +325,9 @@ effect:DAMAGE
 dice:8d8
 effect:TIMED_INC:CONFUSED
 dice:3+1d4
+vis-message:%^ gazes at you with psionic energy
+invis-message:focuses on your mind
+lore:cause mind blasting
 
 name:BRAIN_SMASH
 hit:100
@@ -226,21 +341,33 @@ effect:TIMED_INC:PARALYZED
 dice:3+1d4
 effect:TIMED_INC:BLIND
 dice:7+1d8
+vis-message:%^ smashes you with psionic energy
+invis-message:focuses on your mind
+lore:cause brain smashing
 
 name:CAUSE_1
 hit:100
 effect:DAMAGE
 dice:3d8
+vis-message:%^ points at you and curses
+invis-message:mumbles
+lore:cause light wounds
 
 name:CAUSE_2
 hit:100
 effect:DAMAGE
 dice:8d8
+vis-message:%^ points at you and curses horribly
+invis-message:mumbles
+lore:cause serious wounds
 
 name:CAUSE_3
 hit:100
 effect:DAMAGE
 dice:10d15
+vis-message:%^ points at you and incants terribly
+invis-message:mumbles
+lore:cause critical wounds
 
 name:CAUSE_4
 hit:100
@@ -248,6 +375,9 @@ effect:DAMAGE
 dice:15d15
 effect:TIMED_INC:CUT
 dice:10d10
+vis-message:%^ points at you and screams the word 'DIE!'
+invis-message:mumbles loudly
+lore:cause mortal wounds
 
 name:BO_ACID
 hit:100
@@ -255,6 +385,9 @@ effect:BOLT:ACID
 dice:$B+7d8
 expr:B:MONSTER_LEVEL:/ 3
 power:20
+vis-message:%^ casts a bolt of acid
+invis-message:mumbles
+lore:produce acid bolts
 
 name:BO_ELEC
 hit:100
@@ -262,6 +395,9 @@ effect:BOLT:ELEC
 dice:$B+4d8
 expr:B:MONSTER_LEVEL:/ 3
 power:10
+vis-message:%^ casts a bolt of lightning
+invis-message:mumbles
+lore:produce lightning bolts
 
 name:BO_FIRE
 hit:100
@@ -269,6 +405,9 @@ effect:BOLT:FIRE
 dice:$B+9d8
 expr:B:MONSTER_LEVEL:/ 3
 power:10
+vis-message:%^ casts a bolt of fire
+invis-message:mumbles
+lore:produce fire bolts
 
 name:BO_COLD
 hit:100
@@ -276,6 +415,9 @@ effect:BOLT:COLD
 dice:$B+6d8
 expr:B:MONSTER_LEVEL:/ 3
 power:10
+vis-message:%^ casts a bolt of frost
+invis-message:mumbles
+lore:produce frost bolts
 
 name:BO_POIS
 hit:100
@@ -283,6 +425,9 @@ effect:BOLT:POIS
 dice:$B+9d8
 expr:B:MONSTER_LEVEL:/ 3
 power:125d100
+vis-message:%^ spews a stream of poison
+invis-message:retches
+lore:produce poison bolts
 
 name:BO_NETH
 hit:100
@@ -290,6 +435,9 @@ effect:BOLT:NETHER
 dice:$B+5d5
 expr:B:MONSTER_LEVEL:* 3 / 2 + 30
 power:d2000M2
+vis-message:%^ casts a bolt of nether
+invis-message:mumbles
+lore:produce nether bolts
 
 name:BO_WATE
 hit:100
@@ -297,6 +445,9 @@ effect:BOLT:WATER
 dice:$B+10d10
 expr:B:MONSTER_LEVEL:+ 0
 power:20
+vis-message:%^ fires a jet of water
+invis-message:gurgles
+lore:produce water bolts
 
 name:BO_MANA
 hit:100
@@ -304,6 +455,9 @@ effect:BOLT:MANA
 dice:50+1d$S
 expr:S:MONSTER_LEVEL:* 7 / 2
 power:100
+vis-message:%^ casts a bolt of raw magic
+invis-message:screams
+lore:produce mana bolts
 
 name:BO_PLAS
 hit:100
@@ -311,6 +465,9 @@ effect:BOLT:PLASMA
 dice:$B+8d7
 expr:B:MONSTER_LEVEL:+ 10
 power:30
+vis-message:%^ casts a bolt of plasma
+invis-message:screams
+lore:produce plasma bolts
 
 name:BO_ICEE
 hit:100
@@ -318,48 +475,73 @@ effect:BOLT:ICE
 dice:$B+6d6
 expr:B:MONSTER_LEVEL:+ 0
 power:10
+vis-message:%^ shoots a spear of ice
+invis-message:mumbles
+lore:produce ice bolts
 
 name:MISSILE
 hit:100
 effect:BOLT:MISSILE
 dice:$B+2d6
 expr:B:MONSTER_LEVEL:/ 3
+vis-message:%^ fires a magic missile
+invis-message:mumbles
+lore:produce magic missiles
 
 name:SCARE
 hit:100
 effect:TIMED_INC:AFRAID
 dice:3+1d4
 power:5
+vis-message:%^ conjures up scary horrors
+invis-message:makes scary noises
+lore:terrify
 
 name:BLIND
 hit:100
 effect:TIMED_INC:BLIND
 dice:11+1d4
 power:10
+vis-message:%^ sets off a blinding flash
+invis-message:mumbles
+lore:blind
 
 name:CONF
 hit:100
 effect:TIMED_INC:CONFUSED
 dice:3+1d4
 power:10
+vis-message:%^ conjures up weird things
+invis-message:messes with your mind
+lore:confuse
 
 name:SLOW
 hit:100
 effect:TIMED_INC:SLOW
 dice:3+1d4
 power:15
+vis-message:%^ tries to make you move slowly
+invis-message:mumbles
+lore:slow
 
 name:HOLD
 hit:100
 effect:TIMED_INC:PARALYZED
 dice:3+1d4
 power:25
+vis-message:%^ tries to make you stop moving
+invis-message:mumbles
+lore:paralyze
 
 name:HASTE
 hit:100
 effect:MON_TIMED_INC:FAST
 dice:50
 power:70
+F:RSF_HASTE
+vis-message:%^ starts moving faster
+invis-message:mumbles
+lore:haste-self
 
 name:HEAL
 hit:100
@@ -367,12 +549,18 @@ effect:MON_HEAL_HP
 dice:$B
 expr:B:MONSTER_LEVEL:* 6
 power:30
+vis-message:%^ magically starts closing wounds
+invis-message:mumbles
+lore:heal-self
 
 name:BLINK
 hit:100
 effect:TELEPORT
 dice:10
 power:15
+vis-message:%^ casts a phase door
+invis-message:mumbles
+lore:blink-self
 
 name:TPORT
 hit:100
@@ -380,11 +568,17 @@ effect:TELEPORT
 dice:$B
 expr:B:MAX_SIGHT:* 2 + 5
 power:15
+vis-message:%^ tries to teleport away
+invis-message:makes a soft 'pop'
+lore:teleport-self
 
 name:TELE_TO
 hit:100
 effect:TELEPORT_TO
 power:25
+vis-message:%^ commands you to come hither
+invis-message:commands you to come hither
+lore:teleport to
 
 name:TELE_AWAY
 hit:100
@@ -392,11 +586,17 @@ effect:TELEPORT
 dice:100
 param:1
 power:25
+vis-message:%^ commands you to go away
+invis-message:commands you to go away
+lore:teleport away
 
 name:TELE_LEVEL
 hit:100
 effect:TELEPORT_LEVEL
 power:40
+vis-message:%^ commands you to go far away
+invis-message:commands you to go far away
+lore:teleport level
 
 name:DARKNESS
 hit:100
@@ -404,111 +604,168 @@ effect:DARKEN_AREA
 dice:10
 param:3
 power:5
+vis-message:%^ surrounds you in darkness
+invis-message:mumbles
+lore:create darkness
 
 name:TRAPS
 hit:100
 effect:TOUCH:MAKE_TRAP
 power:10
+vis-message:%^ cackles evilly about traps
+invis-message:cackles evilly
+lore:create traps
 
 name:FORGET
 hit:100
 effect:TIMED_INC:AMNESIA
 dice:3
 power:25
+vis-message:%^ tries to make you forget things
+invis-message:messes with your mind
+lore:cause amnesia
 
 name:S_KIN
 hit:100
 effect:SUMMON:KIN
 dice:8
 power:d200M1
+vis-message:%^ summons its kin
+invis-message:mumbles
+lore:summon similar monsters
 
 name:S_MONSTER
 hit:100
 effect:SUMMON:MONSTER
 dice:1
 power:40
+vis-message:%^ summons a companion
+invis-message:mumbles
+lore:summon a monster
 
 name:S_MONSTERS
 hit:100
 effect:SUMMON:MONSTERS
 dice:8
 power:80
+vis-message:%^ summons some friends
+invis-message:mumbles
+lore:summon monsters
 
 name:S_ANIMAL
 hit:100
 effect:SUMMON:ANIMAL
 dice:12
 power:30
+vis-message:%^ summons animals
+invis-message:mumbles
+lore:summon animals
 
 name:S_SPIDER
 hit:100
 effect:SUMMON:SPIDER
 dice:12
 power:20
+vis-message:%^ summons spiders
+invis-message:mumbles
+lore:summon spiders
 
 name:S_HOUND
 hit:100
 effect:SUMMON:HOUND
 dice:12
 power:100
+vis-message:%^ summons hounds
+invis-message:mumbles
+lore:summon hounds
 
 name:S_HYDRA
 hit:100
 effect:SUMMON:HYDRA
 dice:6
 power:150
+vis-message:%^ summons hydrae
+invis-message:mumbles
+lore:summon hydras
 
 name:S_AINU
 hit:100
 effect:SUMMON:AINU
 dice:1
 power:150
+vis-message:%^ summons an ainu
+invis-message:mumbles
+lore:summon an ainu
 
 name:S_DEMON
 hit:100
 effect:SUMMON:DEMON
 dice:1
 power:d150M1
+vis-message:%^ summons a demon
+invis-message:mumbles
+lore:summon a demon
 
 name:S_UNDEAD
 hit:100
 effect:SUMMON:UNDEAD
 dice:1
 power:d150M1
+vis-message:%^ summons the undead
+invis-message:mumbles
+lore:summon an undead
 
 name:S_DRAGON
 hit:100
 effect:SUMMON:DRAGON
 dice:1
 power:d150M1
+vis-message:%^ summons a dragon
+invis-message:mumbles
+lore:summon a dragon
 
 name:S_HI_DEMON
 hit:100
 effect:SUMMON:HI_DEMON
 dice:8
 power:250
+vis-message:%^ summons major demons
+invis-message:mumbles
+lore:summon greater demons
 
 name:S_HI_UNDEAD
 hit:100
 effect:SUMMON:HI_UNDEAD
 dice:8
 power:400
+vis-message:%^ summons fiends of darkness
+invis-message:mumbles
+lore:summon greater undead
 
 name:S_HI_DRAGON
 hit:100
 effect:SUMMON:HI_DRAGON
 dice:8
 power:400
+vis-message:%^ summons ancient dragons
+invis-message:mumbles
+lore:summon ancient dragons
 
 name:S_WRAITH
 hit:100
 effect:SUMMON:WRAITH
 dice:8
 power:450
+vis-message:%^ summons ringwraiths
+invis-message:mumbles
+lore:summon ringwraiths
 
 name:S_UNIQUE
 hit:100
 effect:SUMMON:UNIQUE
 dice:8
 power:500
+vis-message:%^ summons his servants
+invis-message:mumbles
+lore:summon uniques
 
